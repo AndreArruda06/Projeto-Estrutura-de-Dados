@@ -1,0 +1,7 @@
+*.exe
+*.out
+*.tmp
+*.bak
+*.log
+*.o
+*.obj
