@@ -57,7 +57,12 @@ void exibir_lista(NoLista *inicio){
 	printf("\n");
 	
 }
-
+void liberar_lista(NoLista *inicio){
+	while (inicio != NULL){
+		NoLista *temp = inicio;
+		inicio = inicio->proximo;
+		free(temp);
+	}
+}
 
 	
-}
