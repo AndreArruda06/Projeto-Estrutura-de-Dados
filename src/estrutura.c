@@ -41,3 +41,23 @@ void remover_lista(NoLista **inicio) {
 	
 	free(removido);
 }
+
+void exibir_lista(NoLista *inicio){
+	if( inicio == NULL){
+		printf("A lista esta vazia!\n");
+		return;
+	}
+	
+	printf("\nIDs na Lista: \n"):
+		
+	while (inicio != NULL){
+		printf("%d" , inicio->id);
+		inicio = inicio->proximo;
+	}
+	printf("\n");
+	
+}
+
+
+	
+}
