@@ -13,3 +13,17 @@ void inserir_lista(NoLista **inicio, int id){
 	novo ->id = id;
 	novo -> proximo = NULL;
 }
+
+	if (*inicio == NULL){
+		*inicio = novo;
+	} else {
+		NoLista *atual = *inicio;
+		
+		while (atual -> proximo != NULL){
+			atual = atual -> proximo;
+		}
+		atual -> proximo = novo
+	}
+	
+	printf("ID inserido na Lista! \n");
+}
