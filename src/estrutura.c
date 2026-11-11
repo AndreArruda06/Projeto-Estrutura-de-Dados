@@ -7,11 +7,11 @@ void inserir_lista(NoLista **inicio, int id){
 	
 	if (novo == NULL){
 		printf ("Erro ao alocar memoria. \n" );
-		return n;
+		return ;
 	}
 	
-	novo ->id = id;
-	novo -> proximo = NULL;
+	novo->id = id;
+	novo->proximo = NULL;
 }
 
 	if (*inicio == NULL){
@@ -19,11 +19,25 @@ void inserir_lista(NoLista **inicio, int id){
 	} else {
 		NoLista *atual = *inicio;
 		
-		while (atual -> proximo != NULL){
-			atual = atual -> proximo;
+		while (atual->proximo != NULL){
+			atual = atual->proximo;
 		}
-		atual -> proximo = novo
+		atual->proximo = novo
 	}
 	
 	printf("ID inserido na Lista! \n");
+}
+
+void remover_lista(NoLista **inicio) {
+	if (*inicio = NULL){
+		printf("A lista esta vazia! \n");
+		return;
+	}
+	
+	NoLista *removido = *inicio;
+	*inicio = removido->proximo;
+	
+	printf("ID removido: %d \n", removido->id);
+	
+	free(removido);
 }
