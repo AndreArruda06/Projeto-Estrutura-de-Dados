@@ -92,6 +92,25 @@ int main(){
 				
 			}
         }
+		else if (opcao == 2){
+			int id;
+
+			id = lerInteiro("Digite o ID do livro que deseja buscar: ",1, 2147483647);
+
+			No *resultado = buscar(raiz,id);
+
+			if(resultado == NULL){
+				printf("Livro nao encontrado! \n");
+			}else{
+
+				printf("\n Livro encontrado! \n");
+				printf("ID: %d\n", resultado->livro.id);
+                printf("Titulo: %s\n", resultado->livro.titulo);
+                printf("Autor: %s\n", resultado->livro.autor);
+                printf("Ano: %d\n", resultado->livro.ano);
+			}
+			
+		}
 		
 	}while (opcao != 0);
 		
