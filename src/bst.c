@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "bst.h"
-
+#include "../include/bst.h"
 No* inserir(No *raiz, Livro livro){
 	if (raiz == NULL){
 		No *novo = malloc(sizeof(No));

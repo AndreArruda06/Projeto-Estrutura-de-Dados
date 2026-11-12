@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "bst.h"
-#include "estrutura.h"
 #include <errno.h>
 #include <ctype.h>
+
+#include "../include/bst.h"
+#include "../include/estrutura.h"
 
 // FUNCAO PARA LER E VALIDAR NUMEROS
 int lerInteiro(char mensagem[], int minimo, int maximo) {

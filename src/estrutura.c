@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "estrutura.h"
+#include "../include/estrutura.h"
 
 void inserir_lista(NoLista **inicio, int id){
 	NoLista *novo = malloc(sizeof(NoLista));
