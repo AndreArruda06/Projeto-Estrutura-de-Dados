@@ -53,3 +53,42 @@ void listar_em_ordem(No *raiz){
 		listar_em_ordem(raiz->direita);
 	}
 }
+
+No* remover(No *raiz,int id){
+	if(raiz == NULL){
+		printf("Livro nao encontrado! \n");
+		return NULL;
+	}
+	if (id < raiz->livro.id){
+		raiz->esquerda = remover(raiz->esquerda,id);
+	}
+	else if (id > raiz->livro.id){
+		raiz->direita = remover(raiz->direita,id);
+	}
+	else{
+		if(raiz->esquerda == NULL && raiz->direita == NULL){
+			free(raiz);
+			return NULL;
+		}
+		if(raiz->esquerda==NULL){
+			No *aux= raiz->direita;
+			free(raiz);
+			return aux;
+		}
+		if (raiz->direita == NULL){
+			No *aux = raiz->esquerda;
+			free(raiz);
+			return aux;
+		}
+		
+		No *aux = raiz->direita;
+		
+		while(aux->esquerda!= NULL){
+			aux=aux->esquerda;
+		}
+		
+		raiz->livro=aux->livro;
+		raiz->direita=remover(raiz->direita,aux->livro.id);
+	}
+	return raiz;
+}
