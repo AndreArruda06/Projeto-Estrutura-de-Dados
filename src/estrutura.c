@@ -12,7 +12,6 @@ void inserir_lista(NoLista **inicio, int id){
 	
 	novo->id = id;
 	novo->proximo = NULL;
-}
 
 	if (*inicio == NULL){
 		*inicio = novo;
@@ -22,14 +21,14 @@ void inserir_lista(NoLista **inicio, int id){
 		while (atual->proximo != NULL){
 			atual = atual->proximo;
 		}
-		atual->proximo = novo
+		atual->proximo = novo;
 	}
 	
 	printf("ID inserido na Lista! \n");
 }
 
 void remover_lista(NoLista **inicio) {
-	if (*inicio = NULL){
+	if (*inicio == NULL){
 		printf("A lista esta vazia! \n");
 		return;
 	}
@@ -48,7 +47,7 @@ void exibir_lista(NoLista *inicio){
 		return;
 	}
 	
-	printf("\nIDs na Lista: \n"):
+	printf("\nIDs na Lista: \n");
 		
 	while (inicio != NULL){
 		printf("%d" , inicio->id);
