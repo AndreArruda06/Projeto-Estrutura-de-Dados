@@ -59,7 +59,7 @@ int main(){
 	Livro livro;
 	
 	do{
-		printf("\n \\\\\\\\\_|BIBLIOTECA|_////////// \n");
+		printf("\n ========|BIBLIOTECA|=========\n");
 		printf("1 - Cadastrar livro \n");
 		printf("2 - Buscar livro por ID \n");
 		printf("3 - Remover livro \n");
