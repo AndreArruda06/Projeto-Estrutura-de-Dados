@@ -30,3 +30,13 @@ No* inserir(No *raiz, Livro livro){
 	
 	return raiz;
 }
+
+No* buscar(No *raiz, int id){
+	if (raiz == NULL || raiz->livro.id == id){
+		return raiz;
+	}
+	if (id < raiz->livro.id){
+		return buscar(raiz->esquerda,id);
+	}
+	return buscar(raiz->direita,id);
+}
