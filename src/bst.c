@@ -92,3 +92,11 @@ No* remover(No *raiz,int id){
 	}
 	return raiz;
 }
+
+void liberar_bst(No *raiz){
+	if(raiz != NULL){
+		liberar_bst(raiz->direita);
+		liberar_bst(raiz->esquerda);
+		free(raiz);
+	}
+}
