@@ -50,7 +50,7 @@ void exibir_lista(NoLista *inicio){
 	printf("\nIDs na Lista: \n");
 		
 	while (inicio != NULL){
-		printf("%d" , inicio->id);
+		printf("%d " , inicio->id);
 		inicio = inicio->proximo;
 	}
 	printf("\n");
