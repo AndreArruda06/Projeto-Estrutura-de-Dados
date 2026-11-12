@@ -55,6 +55,7 @@ int main(){
 	NoLista *inicio = NULL;
 	
 	int opcao;
+	Livro livro;
 	
 	do{
 		printf("\n \\\\\\\\\_|BIBLIOTECA|_////////// \n");
@@ -67,6 +68,29 @@ int main(){
 		printf("7 - Exibir lista \n");
 		printf("0 - Encerrar \n\n");
 		opcao = lerInteiro("Escolha uma opcao: ", 0, 7);
+		
+		if (opcao == 1) {
+            livro.id = lerInteiro("Digite o ID do livro: ", 1, 2147483647);
+            
+            if (buscar(raiz, livro.id) != NULL) {
+  				printf("Esse ID ja esta cadastrado!\n");
+			} else {
+				
+				printf("Digite o titulo do livro: ");
+				fgets(livro.titulo, sizeof(livro.titulo), stdin);
+				livro.titulo[strcspn(livro.titulo, "\n")] = '\0';
+				
+				printf("Digite o autor do livro: ");
+				fgets(livro.autor, sizeof(livro.autor), stdin);
+				livro.autor[strcspn(livro.autor, "\n")] = '\0';
+				
+				livro.ano = lerInteiro("Digite o ano de publicacao: ", 1, 2026);
+				
+				raiz = inserir(raiz, livro);
+				printf("Livro cadastrado com sucesso!\n");
+				
+			}
+        }
 		
 	}while (opcao != 0);
 		
