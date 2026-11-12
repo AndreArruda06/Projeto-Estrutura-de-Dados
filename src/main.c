@@ -3,6 +3,52 @@
 #include <string.h>
 #include "bst.h"
 #include "estrutura.h"
+#include <errno.h>
+#include <ctype.h>
+
+// FUNCAO PARA LER E VALIDAR NUMEROS
+int lerInteiro(char mensagem[], int minimo, int maximo) {
+
+    char entrada[100];
+    char *fim;
+    long valor;
+
+    while (1) { // Repete ate receber um valor valido
+
+        printf("%s", mensagem); 
+
+        // Le a entrada do usuario como texto e armazena
+        if (fgets(entrada, sizeof(entrada), stdin) == NULL) {
+            return 0;
+        }
+
+        errno = 0; // Limpa o indicador de erro anterior para comeÃ§ar a conversao do valor atual
+
+
+
+        // Converte o texto digitado em numero e guarda em valor
+		// fim indica onde a conversao parou, para verificar se havia caracteres invalidos
+		// O numero 10 indicando que a conversao utiliza a base decimal
+        valor = strtol(entrada, &fim, 10);
+
+        // Ignora espacos depois do numero
+        while (isspace((unsigned char)*fim)) {
+            fim++;
+        }
+
+        // Verifica se a entrada e invalida
+        if (fim == entrada || *fim != '\0' ||
+            errno == ERANGE || valor < minimo || valor > maximo) {
+
+            printf("Valor invalido! Tente novamente.\n");
+
+        } else {
+
+            // Se estiver correto, retorna o numero
+            return (int)valor;
+        }
+    }
+}
 
 int main(){
 	No *raiz = NULL;
@@ -18,10 +64,9 @@ int main(){
 		printf("4 - Listar livros em ordem \n");
 		printf("5 - Inserir ID na lista \n");
 		printf("6 - Remover ID na lista \n");
-		printf("7 Exibir lista \n");
+		printf("7 - Exibir lista \n");
 		printf("0 - Encerrar \n\n");
-		printf("Escolha uma opçao: ");
-		scanf("%d", &opcao);
+		opcao = lerInteiro("Escolha uma opcao: ", 0, 7);
 		
 	}while (opcao != 0);
 		
