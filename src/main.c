@@ -143,6 +143,14 @@ int main(){
 
 		}
 
+		else if(opcao == 6){
+			int id;
+			remover_lista(&inicio);
+		}
+		else if(opcao == 7){
+			exibir_lista(inicio);
+		}
+
 		
 	}while (opcao != 0);
 		
