@@ -113,14 +113,14 @@ int main(){
 		}
 
 		else if( opcao == 3){
-			int id
+			int id;
 
 			id = lerInteiro("Digite o ID do livro que deseja remover: ", 1, 2147483647);
 
-			if (buscar(raiz, id)) == NULL{
+			if (buscar(raiz, id) == NULL){
 				printf("Livro nao encontrado! \n");
-			} else if {
-				raiz = remover(raiz, id)
+			} else {
+				raiz = remover(raiz, id);
 				printf("Livro removido com sucesso!\n");
 			}
 		}
