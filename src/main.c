@@ -124,6 +124,15 @@ int main(){
 				printf("Livro removido com sucesso!\n");
 			}
 		}
+
+		else if(opcao == 4){
+			if (raiz == NULL){
+				printf("Nenhum livro cadastrado!\n");
+			}else {
+				printf("=======|LIVROS CADASTRADOS|=======\n");
+				listar_em_ordem(raiz);
+			}
+		}
 		
 	}while (opcao != 0);
 		
