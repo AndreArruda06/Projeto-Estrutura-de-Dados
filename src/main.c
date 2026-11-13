@@ -137,12 +137,12 @@ int main(){
 		else if(opcao == 5){
 			int id;
 
-			id = inserir_lista("Digite o ID que deseja inserir na lista: ", 1, 2147483647);
+			id = lerInteiro("Digite o ID que deseja inserir na lista: ", 1, 2147483647);
 
 			inserir_lista(&inicio, id);
 
 		}
-		
+
 		
 	}while (opcao != 0);
 		
